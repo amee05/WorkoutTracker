@@ -1,16 +1,16 @@
 const { model, Schema } = require('mongoose')
 
-const Plan = new Schema({
+const Workout = new Schema({
   day: {
     type: Date,
     default: () => new Date()
   },
-  xercises: [
+  exercises: [
     {
       type: {
         type: String,
+        trim: true,
         required: true
-
       }
       name: {
         type: String,
@@ -24,9 +24,14 @@ const Plan = new Schema({
       weight: {
         type: Number,
       }
-      
+      reps: {
+        type: Number
+      },
+      sets: {
+        type: Number
+      }
     }
   ]
 })
 
-module.exports = model('Plan', Plan)
+module.exports = model('Workout', Workout)
