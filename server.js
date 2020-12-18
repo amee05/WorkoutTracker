@@ -10,5 +10,5 @@ app.use(express.json())
 app.use(require('./routes'))
 
 require('./db')
-  .then(() => app.listen(process.env.MONGODB_URL || 3000))
+  .then(() => app.listen(process.env.MONGODB_URI || 3000))
   .catch(err => console.log(err))
